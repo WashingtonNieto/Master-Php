@@ -2,7 +2,7 @@
 <?php require_once 'includes/lateral.php'; ?>
 <!-- Caja Principal -->
 <div id="principal">
-    <h1>Ultimas entradasssss</h1>
+    <h1>Ultimas entrada</h1>
     <article class="entrada">
         <a href="">
             <h2>Titulo de mi entrada</h2>

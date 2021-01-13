@@ -9,10 +9,16 @@ if(isset($_POST)){
     if(!isset($_SESSION)){
         session_start();
     }
-
+    
+    //mysqli_real_escape_string se usa para escapar el insertar en la base de datos
+    //si el usuario se equivoca o no ingresando comillas, quiere decir que si por 
+    //error o no incluye comillas estas quedan grabadas en la base de datos
+    // asi un campo washington" (con comillas) tal cual queda grabada en la base de datos
+    //asi si alguien de mala fe quiere saltarse el sistema incluyendo " no va a fallar
+    //porque el programa acepta comillas y seran incluidas en el campo
     $nombre = isset($_POST['nombre']) ? mysqli_real_escape_string($db,$_POST['nombre']) : false;
     $apellidos = isset($_POST['apellidos']) ? mysqli_real_escape_string($db,$_POST['apellidos']) : false;
-    $email = isset ($_POST['email']) ? mysqli_real_escape_string($db,$_POST['email']) : false;
+    $email = isset ($_POST['email']) ? mysqli_real_escape_string($db,trim($_POST['email'])) : false;
     $password = isset ($_POST['password']) ? mysqli_real_escape_string($db,$_POST['password']) : false;
     
     // array de errores
@@ -59,6 +65,7 @@ if(isset($_POST)){
         
         //cifrar la contrasena
         $password_segura = password_hash($password, PASSWORD_BCRYPT, ['cost'=>4]);
+        // ojo cost ( el numero de pasadas para encriptar)
         //var_dump($password);
         //var_dump($password_segura);
         //var_dump(password_verify($password, $password_segura));
