@@ -176,6 +176,14 @@ input[type="submit"],
     width:130px;
 }
 
+.boton-naranja{
+    background: orange;
+}
+
+.boton-verde{
+    background: green;
+}
+
 #principal{
     float: left;
     width: 65%;

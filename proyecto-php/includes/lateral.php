@@ -6,6 +6,8 @@
             <h3>Bienvenidos, <?=$_SESSION['usuario']['nombre'].' '.$_SESSION['usuario']['apellidos']; ?></h3>
             
             <!-- Boton cerrar sesion -->
+            <a href="cerrar.php" class="boton boton-verde">Crear entradas</a>
+            <a href="cerrar.php" class="boton-naranja">Mis datos</a>
             <a href="cerrar.php" class="boton">Cerrar Sesion</a>
    
         </div>
