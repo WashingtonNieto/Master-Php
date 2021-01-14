@@ -7,7 +7,7 @@
             
             <!-- Boton cerrar sesion -->
             <a href="cerrar.php" class="boton">Cerrar Sesion</a>
-            
+   
         </div>
     <?php endif; ?>
     
