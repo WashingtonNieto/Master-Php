@@ -22,18 +22,20 @@
                     <li>
                         <a href="index.php">Inicio</a>
                     </li>
-                    <li>
-                        <a href="index.php">Categoria1</a>
-                    </li>
-                    <li>
-                        <a href="index.php">Categoria2</a>
-                    </li>
-                    <li>
-                        <a href="index.php">Categoria3</a>
-                    </li>
-                    <li>
-                        <a href="index.php">Categoria4</a>
-                    </li>
+
+                    <?php
+                        $categorias = conseguirCategorias($db);
+                        if(!empty($categorias)):
+                            while($categoria = mysqli_fetch_assoc($categorias)):
+                    ?>
+                                <li>
+                                    <a href="categoria.php?id=<?=$categoria['id']?>"><?=$categoria['nombre']?></a>
+                                </li>
+                    <?php 
+                            endwhile; 
+                        endif;
+                    ?>
+
                     <li>
                         <a href="index.php">Sobre mi</a>
                     </li>
