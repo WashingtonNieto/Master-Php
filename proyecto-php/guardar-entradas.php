@@ -10,8 +10,8 @@ if(isset($_POST)){
     $categoria = isset($_POST['$categoria']) ? mysqli_real_escape_string($db, (int)$_POST['$categoria']) : false;
     $usuario = $_SESSION['usuario']['id'];
 
-    var_dump($_POST);
-    die();
+    //var_dump($_POST);
+    //die();
     
     
     //validacion
@@ -38,8 +38,8 @@ if(isset($_POST)){
         $errores['categoria'] = "El categoria no es valida";
     }
     //verificar que error hay
-    //var_dump($errores);
-    //die();
+    var_dump($errores);
+    die();
     
     if(count($errores) == 0){
         $sql = "INSERT INTO entradas VALUES(NULL, $usuario,$categoria, '$titulo', '$descripcion',curdate());";
