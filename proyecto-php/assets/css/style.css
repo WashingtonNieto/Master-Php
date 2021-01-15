@@ -37,8 +37,12 @@ body{
 }
 .alerta-error{
     background: red;
-}
 
+.fecha{
+    color: #4e4e4e;
+    margin-top:5px;
+    font-size:14px;
+}
 
 /* estilos de la cabecera */
 #cabecera{
