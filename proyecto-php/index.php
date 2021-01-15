@@ -10,8 +10,12 @@
             while($entrada = mysqli_fetch_assoc($entradas)):
     ?>
                 <article class="entrada">
+                    <!-- imprimir var_dump desde html
+                    <?php var_dump($entrada); ?>
+                    -->
                     <a href="">
                         <h2><?=$entrada['titulo']?></h2>
+                        <span class="fecha"><?=$entrada['categoria'].' | '.$entrada['fecha']?></span>
                         <p>
                             <?=substr($entrada['descripcion'],0,180)."..."?>
                         </p>
