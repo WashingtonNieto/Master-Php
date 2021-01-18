@@ -6,8 +6,8 @@ if(isset($_POST)){
     require_once 'includes/conexion.php';
     
     $titulo = isset($_POST['titulo']) ? mysqli_real_escape_string($db, $_POST['titulo']) : false;
-    $descripcion = isset($_POST['$descripcion']) ? mysqli_real_escape_string($db, $_POST['$descripcion']) : false;
-    $categoria = isset($_POST['$categoria']) ? mysqli_real_escape_string($db, (int)$_POST['$categoria']) : false;
+    $descripcion = isset($_POST['descripcion']) ? mysqli_real_escape_string($db, $_POST['descripcion']) : false;
+    $categoria = isset($_POST['categoria']) ? (int)$_POST['categoria'] : false;
     $usuario = $_SESSION['usuario']['id'];
 
     //var_dump($_POST);
@@ -31,15 +31,12 @@ if(isset($_POST)){
         $errores['descripcion'] = "El descripcion no es valido";
     }
     
-    if(!empty($categoria)&& is_numeric($categoria)){
-        $categoria_validado = true;
-    }else {
-        $categoria_validado = false;
+    if(empty($categoria) && !is_numeric($categoria)){
         $errores['categoria'] = "El categoria no es valida";
     }
     //verificar que error hay
-    var_dump($errores);
-    die();
+    //var_dump($errores);
+    //die();
     
     if(count($errores) == 0){
         $sql = "INSERT INTO entradas VALUES(NULL, $usuario,$categoria, '$titulo', '$descripcion',curdate());";
