@@ -13,9 +13,12 @@
     <form action="guardar-entradas.php" method="POST">
         <label for="titulo">Titulo:</label>
         <input type="text" name="titulo" />
+        <?php echo isset($_SESSION['errores_entrada']) ? mostrarError($_SESSION['errores_entrada'],'titulo') : ''; ?>
+
         
         <label for="descripcion">Descripcion:</label>
-        <textarea name="descripcion"> </textarea>
+        <textarea class= textarea name="descripcion"> </textarea>
+        <?php echo isset($_SESSION['errores_entrada']) ? mostrarError($_SESSION['errores_entrada'],'descripcion') : ''; ?>
         
         <label for="categoria">Categoria</label>
         <select name="categoria">
@@ -30,9 +33,10 @@
             <?php
                     endwhile;
                 endif;
-                
             ?>
         </select>
+        <?php echo isset($_SESSION['errores_entrada']) ? mostrarError($_SESSION['errores_entrada'],'categoria') : ''; ?>
+        
         <input type="submit" value="Guardar" />
     </form>
 </div>

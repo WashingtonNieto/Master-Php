@@ -41,7 +41,10 @@ if(isset($_POST)){
     if(count($errores) == 0){
         $sql = "INSERT INTO entradas VALUES(NULL, $usuario,$categoria, '$titulo', '$descripcion',curdate());";
         $guardar = mysqli_query($db, $sql);
+    }else
+        $_SESSION["errores_entrada"] = $errores;
+        header("Location: crear_entradas.php");
     }
     header("Location: index.php");
-}    
+   
 
