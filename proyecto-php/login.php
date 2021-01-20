@@ -5,10 +5,12 @@ require_once 'includes/conexion.php';
  
 // Recoger datos del formulario
 if(isset($_POST)){
+    //var_dump($_POST);
+    //die();
     
     // Cierro la sesion antigua o de un usuario anterior
     if(isset($_SESSION['error_login'])){
-        session_unset($_SESSION['error_login']);
+        header("Location:index.php");
     }
 
     $email = trim($_POST['email']);

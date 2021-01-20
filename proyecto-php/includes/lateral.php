@@ -1,5 +1,6 @@
 <aside id="sidebar">
     
+   
     <?php if(isset($_SESSION['usuario'])): ?>
         <div id="usuario-logueado" class="bloque">
             <h3>Bienvenidos, <?=$_SESSION['usuario']['nombre'].' '.$_SESSION['usuario']['apellidos']; ?></h3>
@@ -7,7 +8,7 @@
             <!-- Boton cerrar sesion -->
             <a href="crear-entradas.php" class="boton boton-verde">Crear entradas</a>
             <a href="crear-categoria.php" class="boton boton">Crear categoria</a>
-            <a href="cerrar.php" class="boton boton-naranja">Mis datos</a>
+            <a href="mis-datos.php" class="boton boton-naranja">Mis datos</a>
             <a href="cerrar.php" class="boton boton-rojo">Cerrar Sesion</a>
    
         </div>

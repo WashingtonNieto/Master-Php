@@ -1,5 +1,4 @@
 <?php
-
     //conexion
     $servidor = 'localhost';
     $usuario = 'root';
@@ -14,4 +13,3 @@
     if(!isset($_SESSION)){
         session_start();
     }
-

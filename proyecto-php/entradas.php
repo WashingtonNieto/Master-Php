@@ -2,10 +2,10 @@
 <?php require_once 'includes/lateral.php'; ?>
 <!-- Caja Principal -->
 <div id="principal">
-    <h1>Ultimas entrada</h1>
+    <h1>Todas entrada</h1>
     
     <?php 
-        $entradas = conseguirEntradas($db, true);
+        $entradas = conseguirEntradas($db);
         if(!empty($entradas)):
             while($entrada = mysqli_fetch_assoc($entradas)):
     ?>
@@ -25,10 +25,6 @@
             endwhile;
         endif;
     ?>
-    
-    <div id="ver-toda">
-        <a href="entradas.php">Ver todas las entradas </a>
-    </div>
 </div>
 <!-- Prie de pagina -->
 <?php require_once 'includes/pie.php'; ?>
