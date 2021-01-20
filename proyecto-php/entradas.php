@@ -2,7 +2,7 @@
 <?php require_once 'includes/lateral.php'; ?>
 <!-- Caja Principal -->
 <div id="principal">
-    <h1>Todas entrada</h1>
+    <h1>Todas las entradas</h1>
     
     <?php 
         $entradas = conseguirEntradas($db);

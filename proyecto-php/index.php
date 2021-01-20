@@ -2,10 +2,10 @@
 <?php require_once 'includes/lateral.php'; ?>
 <!-- Caja Principal -->
 <div id="principal">
-    <h1>Ultimas entrada</h1>
+    <h1>Ultimas entradas</h1>
     
     <?php 
-        $entradas = conseguirEntradas($db, true);
+        $entradas = conseguirEntradas($db,$limit=4);
         if(!empty($entradas)):
             while($entrada = mysqli_fetch_assoc($entradas)):
     ?>
