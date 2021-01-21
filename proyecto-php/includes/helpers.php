@@ -58,18 +58,17 @@ function conseguirCategoria($conexion, $id){
 }
 
 function conseguirEntrada($conexion, $id){
-    $sql =  "SELECT e.*, c.nombre AS 'categoria' FROM entradas e ".
+    $sql =  "SELECT e.*, c.nombre AS 'categoria', CONCAT(u.nombre,' ',u.apellidos) AS usuario".
+            "FROM entradas e".
             "INNER JOIN categorias c ON e.categoria_id = c.id ".
+            "INNER JOIN usuarios u ON e.usuario_id = u.id ".
             "WHERE e.id = $id";
     $entrada = mysqli_query($conexion, $sql);
-    //otra forma de hacer var_dump
-    //echo $sql;
-    //die();
-    return array();
-    if($entrada && mysqli_num_rows($entrada) >= 1){
-       $resultado = mysqli_fetch_assoc($entrada); 
-    }
     
+    $resultado = array();
+    if($entrada && mysqli_num_rows($entrada) >= 1){
+        $resultado = mysqli_fetch_assoc($entrada);
+    }
     return $resultado;
 }
 
@@ -101,3 +100,4 @@ function conseguirEntradas($conexion, $limit = null, $categoria = null){
     
     return $resultado;
 }
+
