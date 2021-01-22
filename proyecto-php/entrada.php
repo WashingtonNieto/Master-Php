@@ -2,11 +2,11 @@
 <?php require_once 'includes/helpers.php'; ?>
 
 <?php
-    $entrada_actual = conseguirEntrada($db, $_GET['id']);
+    $entrada_actual = conseguirEntrada1($db, $_GET['id']);
     
-    //if(!isset($entrada_actual['id'])){
-    //    header("Location: index.php");
-    //}
+    if(!isset($entrada_actual['id'])){
+        header("Location: index.php");
+    }
 ?>
 
 <?php require_once 'includes/cabecera.php'; ?>
@@ -16,7 +16,6 @@
 
 <div id="principal">
     <h1><?=$entrada_actual['titulo']?></h1>
-    
     <a href="categoria.php?id=<?=$entrada_actual['categoria_id']?>">
         <h2><?=$entrada_actual['categoria']?></h2>
     </a>
@@ -24,6 +23,12 @@
     <p>
         <?=$entrada_actual['descripcion']?>
     </p>
+    
+    <?php if(isset($_SESSION["usuario"]) && $_SESSION['usuario']['id'] == $entrada_actual['usuario_id']): ?>
+        </br>
+        <a href="editar-entrada.php" class="boton boton-verde">Editar entradas</a>
+        <a href="borrar-entrada.php" class="boton boton">Eliminar entrada</a>
+    <?php endif;?>
 </div>
 
 
