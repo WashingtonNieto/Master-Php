@@ -73,7 +73,7 @@ Class coche{
         return $this->velocidad;
     }
     
-    public function mostrarInformacion($miObjeto){
+    public function mostrarInformacion(Coche $miObjeto){
         $informacion = "<h1>Informacion del coche</h1>";
         $informacion .= "Color: ".$miObjeto->color;
         $informacion .= "<br/>Modelo: ".$miObjeto->modelo;
