@@ -1,8 +1,15 @@
 <?php
+require_once 'config/database.php';
 
 class ModeloBase{
-    public function conseguirTodos(){
-        return "sacando todos los usuarios";
+    public $db;
+    
+    public function __construct() {
+        $this->db = database::conectar();
+    }
+    public function conseguirTodos($tabla){
+        $query = $this->db->query("SELECT * FROM  $tabla ORDER BY id DESC");
+        return $query;
     }
 }
 
