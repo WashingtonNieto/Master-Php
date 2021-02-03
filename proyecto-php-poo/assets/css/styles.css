@@ -20,6 +20,24 @@ a:hover{
     color:#555555;
 }
 
+.alert_green{
+    color:green;
+}
+
+.alert_red{
+    color:red;
+}
+
+table{
+    text-align: center;
+    width: 100%;
+    border: 1px solid #555;
+}
+td{
+     border-top: 1px solid #555;
+     padding: 2px;
+}
+
 /*CONTAINER*/
 
 #container{
