@@ -41,7 +41,7 @@ class Usuario{
     }
 
     function getPassword() {
-        return password_hash($this->db->real_escape_string($this->$password),PASSWORD_BCRYPT,['cost' => 4]);;
+        return password_hash($this->db->real_escape_string($this->password),PASSWORD_BCRYPT,['cost' => 4]);;
     }
 
     function getRol() {
@@ -103,9 +103,10 @@ class Usuario{
         $sql = "SELECT * FROM usuarios WHERE email = '$email'";
         $login = $this->db->query($sql);
         
+
+        
         if($login && $login->num_rows == 1){
             $usuario = $login->fetch_object();
-            
             //Verificar la contrasena
             $verify = password_verify($password, $usuario->password);
             
