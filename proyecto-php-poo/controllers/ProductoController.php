@@ -3,7 +3,25 @@ require_once 'models/producto.php';
 
 class productoController{
     public function index(){
-        echo "Controlador Producto, Accion Index";
+        $producto = new Producto();
+        $productos = $producto->getRandon(6);
+        
+        require_once 'views/producto/destacados.php';
+    }
+    
+    public function ver(){
+        if(isset($_GET['id'])){
+            $id = $_GET['id'];
+            
+            $producto = new Producto();
+            $producto->setId($id);
+            
+            $product = $producto->getOne();
+            
+            require_once 'views/producto/ver.php';
+        }else{
+            header("Location:".base_url.'producto/gestion');            
+        }
     }
     
     public function gestion(){
@@ -40,21 +58,31 @@ class productoController{
                 $producto->setStock($stock);
                 $producto->setCategoria_id($categoria);
  
-                //guardar la imagen
-                $file = $_FILES['imagen'];
-                $filename = $file['name'];
-                $mimetype = $file['type'];
+                // Guardar la imagen
+                if (isset($_FILES['imagen'])){
+                    $file = $_FILES['imagen'];
+                    $filename = $file['name'];
+                    $mimetype = $file['type'];
+
+                    if($mimetype == "image/jpg" || $mimetype == "image/jpeg" || $mimetype == "image/png" || $mimetype == "image/gif"){
+                        if(!is_dir('uploads/images')){
+                            mkdir('uploads/images', 0777, true);
+                        }
+                        $producto->setImagen($filename);
+                        move_uploaded_file($file['tmp_name'], 'uploads/images/'.$filename);
+
+                    } 
+                }
                 
-                if($mimetype == "image/jpg" || $mimetype == "image/jpeg" || $mimetype == "image/png" || $mimetype == "image/gif"){
-                    if(!is_dir('uploads/images')){
-                        mkdir('uploads/images', 0777, true);
-                    }
-                    $producto->setImagen($filename);
-                    move_uploaded_file($file['tmp_name'], 'uploads/images/'.$filename);
-                           
-                } 
+                if(isset($_GET['id'])){
+                    $id = $_GET['id'];
+                    $producto->setId($id);
+                    
+                    $save = $producto->edit();
+                }else{
+                    $save = $producto->save();
+                }
                 
-                $save = $producto->save();
                 if($save){
                     $_SESSION['producto'] = "complete";
                 }else{

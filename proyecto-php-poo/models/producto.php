@@ -88,8 +88,21 @@ class Producto{
         $this->imagen = $imagen;
     }
 
+    public function getAllCategory(){
+        $sql = "SELECT p.*, c.nombre AS 'catnombre' FROM productos p "
+                ."INNER JOIN categorias c ON c.id = p.categoria_id "
+                ."WHERE p.categoria_id = {$this->getCategoria_id()} "
+                ."ORDER BY id DESC;";
+        $productos = $this->db->query($sql);   
+        return $productos;
+    }    
+    
     public function getAll(){
         $productos = $this->db->query("SELECT * FROM productos ORDER BY id DESC;");
+        return $productos;
+    }
+    public function getRandon($limit){
+        $productos = $this->db->query("SELECT * FROM productos ORDER BY RAND() LIMIT $limit ;");
         return $productos;
     }
     
@@ -109,6 +122,24 @@ class Producto{
         //echo $this->db->error;
         //die();
         
+        $result = false;
+        if($save){
+            $result = true;
+        }
+        return $result;
+    }
+    
+        public function edit(){
+       
+        $sql = "UPDATE productos SET categoria_id='{$this->getCategoria_id()}',nombre='{$this->getNombre()}',descripcion='{$this->getDescripcion()}',precio='{$this->getPrecio()}' ";
+        $sql .= ", stock='{$this->getStock()}'";
+        
+        if($this->getImagen() != null){
+            $sql .= ",imagen='{$this->getImagen()}'";
+        }
+        $sql .= " WHERE id={$this->id};";
+        $save = $this->db->query($sql);
+       
         $result = false;
         if($save){
             $result = true;
