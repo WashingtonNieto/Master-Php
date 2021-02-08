@@ -4,7 +4,7 @@
     Crear producto
 </a>
 
-//Cerrar la creacion y borrar la sesion
+<!--Cerrar la creacion y borrar la sesion-->
 <?php if(isset($_SESSION['producto']) && $_SESSION['producto'] == 'complete'): ?>
     <strong class="alert_green">El producto fue creado correctamente</strong>
 <?php elseif(isset($_SESSION['producto']) && $_SESSION['producto'] == 'complete'): ?>
@@ -13,14 +13,14 @@
 
 <?php Utils::deleteSession('producto'); ?>
 
-/*Cerrar la eliminacion y borrar la sesion*/
+<!--Cerrar la eliminacion y borrar la sesion-->
 <?php if(isset($_SESSION['delete']) && $_SESSION['delete'] == 'complete'): ?>
     <strong class="alert_green">El producto fue eliminado correctamente</strong>
 <?php elseif(isset($_SESSION['delete']) && $_SESSION['delete'] == 'complete'): ?>
     <strong class="alert_red">El producto NO fue eliminado correctamente</strong>
 <?php endif; ?>
 
-<?php Utils::deleteSession('producto'); ?>
+<?php Utils::deleteSession('delete'); ?>
     
     
 <table>
