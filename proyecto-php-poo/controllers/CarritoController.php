@@ -2,8 +2,11 @@
 require_once 'models/producto.php';
 
 class carritoController{
+    
     public function index(){
-        echo "Controlador Carritoooo";
+        $carrito =($_SESSION['carrito']);
+        echo "controlador carrito, accion index";
+        require_once 'views/carrito/index.php';
     }
     
     public function add(){
@@ -12,10 +15,9 @@ class carritoController{
         }else{
             header("Location:".base_url);
         }
-        
         if(isset($_SESSION['carrito'])){
             $counter = 0;
-            foreach($_SESSION['carrito'] as $indice => $elemento){
+            foreach ($_SESSION['carrito'] as $indice => $elemento){
                 if($elemento['id_producto'] == $producto_id){
                     $_SESSION['carrito'][$indice]['unidades']++;
                     $counter++;
@@ -24,12 +26,11 @@ class carritoController{
         }
         
         if(!isset($counter) || $counter == 0){
-            // conseguir producto
-            $producto = new Producto();
+            // Conseguir producto
+            $producto =  new Producto;
             $producto->setId($producto_id);
             $producto = $producto->getOne();
             
-            //Anadir al carrito
             if(is_object($producto)){
                 $_SESSION['carrito'][] = array(
                     "id_producto" => $producto->id,
@@ -37,7 +38,6 @@ class carritoController{
                     "unidades" => 1,
                     "producto" => $producto
                 );
-                        
             }
         }
         header("Location:".base_url."carrito/index");
