@@ -1,6 +1,6 @@
 <?php
 
-class Pedido {
+class Pedido{
 
     private $id;
     private $usuario_id;
@@ -11,6 +11,7 @@ class Pedido {
     private $estado;
     private $fecha;
     private $hora;
+    
     private $db;
 
     public function __construct() {
@@ -62,15 +63,15 @@ class Pedido {
     }
 
     function setProvincia($provincia) {
-        $this->provincia = $this-> $provincia;
+        $this->provincia = $this->db->real_escape_string($provincia);
     }
 
     function setLocalidad($localidad) {
-        $this->localidad = $localidad;
+        $this->localidad = $this->db->real_escape_string($localidad);
     }
 
     function setDireccion($direccion) {
-        $this->direccion = $direccion;
+        $this->direccion = $this->db->real_escape_string($direccion);
     }
 
     function setCosto($costo) {
