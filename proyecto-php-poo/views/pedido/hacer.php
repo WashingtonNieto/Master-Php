@@ -19,10 +19,6 @@
         <input type="submit" value="Confirmar pedido" />
         
     </form>
-    
-    
-    
-    
 <?php else: ?>
     <h1>Necesitas estar identificado</h1>
     <p>

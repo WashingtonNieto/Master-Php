@@ -48,6 +48,7 @@ class carritoController{
     }
     
     public function delete_all(){
+
         unset($_SESSION['carrito']);
         header("Location:".base_url."carrito/index");
     }
