@@ -1,6 +1,6 @@
 <?php
 
-class Pedido{
+class Pedido {
 
     private $id;
     private $usuario_id;
@@ -11,7 +11,6 @@ class Pedido{
     private $estado;
     private $fecha;
     private $hora;
-    
     private $db;
 
     public function __construct() {
@@ -105,6 +104,12 @@ class Pedido{
 
         $sql = "INSERT INTO pedidos VALUES(NULL,{$this->getUsuario_id()},'{$this->getProvincia()}','{$this->getLocalidad()}','{$this->getDireccion()}',{$this->getCosto()},'confirmado',CURDATE(),CURTIME());";
         $save = $this->db->query($sql);
+        //var_dump($sql);
+        //die();
+        //echo $sql;
+        //echo "<br/>";
+        //echo $this->db->error;
+        //die();
 
         $result = false;
         if ($save) {

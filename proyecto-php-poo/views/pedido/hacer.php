@@ -11,7 +11,7 @@
         <input type="text" name="provincia" required />
         
         <label for="ciudad">Ciudad</label>
-        <input type="text" name="localidad" required />
+        <input type="text" name="localidad  " required />
         
         <label for="direccion">Direccion</label>
         <input type="text" name="direccion" required />
@@ -19,6 +19,10 @@
         <input type="submit" value="Confirmar pedido" />
         
     </form>
+    
+    
+    
+    
 <?php else: ?>
     <h1>Necesitas estar identificado</h1>
     <p>
