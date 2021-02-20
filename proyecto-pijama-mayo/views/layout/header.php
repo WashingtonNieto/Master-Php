@@ -10,9 +10,9 @@
             <!-- Cabecera -->
             <header id="header">
                 <div id="logo">
-                    <img src="<?=base_url?>assets/img/camiseta.png" alt="camiseta logo">
+                    <img src="<?=base_url?>assets/img/pijamas.png" alt="pijama logo">
                     <a href="<?=base_url?>">
-                        Tienda de camisetas
+                        <img src="<?=base_url?>assets/img/pijamas-nombre.png" alt="pijama logo">
                     </a>
                 </div>
             </header>
