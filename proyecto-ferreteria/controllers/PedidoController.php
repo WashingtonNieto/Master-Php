@@ -28,9 +28,14 @@ class pedidoController{
                 $pedido->setDireccion($direccion);
                 $pedido->setCosto($coste);
                 
-                
-                var_dump($pedido);
-                die();
+                $save = $pedido->save();
+                if($save){
+                    $_SESSION['pedido'] = "Complete";
+                }else{
+                    $_SESSION['pedido'] = "failed";
+                }
+            }else{
+                $_SESSION['pedido'] = "failed";
             }
             
         }else{
