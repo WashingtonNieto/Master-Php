@@ -2,22 +2,24 @@
 
 *{
     padding: 0px;
-    margin:0px;
+    margin: 0px;
     font-family: sans-serif, Helvetica, Arial;
 }
 
 body{
     background: url(../img/bg.png);
 }
+
 a{
-    color:#01B1EA;
+    color: #01B1EA;
 }
 
 a:visited{
     color: #01B1EA;
 }
+
 a:hover{
-    color:#555555;
+    color: #555555;
 }
 
 .alert_green{
@@ -33,23 +35,26 @@ table{
     width: 100%;
     border-bottom: 1px solid #ccc;
 }
+
 td{
-     border-top: 1px solid #ccc;
-     padding: 2px;
+    border-top: 1px solid #ccc;
+    padding: 2px;
 }
 
-
+.thumb{
+    width: 100px;
+}
 
 /*CONTAINER*/
-
 #container{
-    width: 80%;
-    margin: 0px auto;
-    box-shadow: 0px 0px 10px gray;
-    background:white; 
+   width: 80%;
+   margin: 0px auto;
+   box-shadow: 0px 0px 10px gray;
+   background: white;
 }
 
 /*HEADER*/
+
 #header{
     height: 145px;
     background: #F0F0F0;
@@ -58,21 +63,21 @@ td{
 #logo{
     padding: 20px;
     margin-left: 20px;
-    float: left;
+    float:left;
 }
 
 #logo img{
-    float: left;
+    float:left;
     height: 100px;
 }
 
 #logo a{
-    float: left;
+    float:left;
     font-size: 40px;
     letter-spacing: 4px;
     font-family: 'Open Sans', Helvetica, Arial;
     text-transform: uppercase;
-    color: #DB0404;
+    color: #01B1EA;
     font-weight: bold;
     text-decoration: none;
     margin-top: 18px;
@@ -87,7 +92,7 @@ td{
 
 /*MENU*/
 #menu{
-    clear: both;
+    clear:both;
     background: #222;
     color: white;
     height: 55px;
@@ -98,12 +103,12 @@ td{
     list-style: none;
     text-decoration: none;
     margin: 0px auto;
-    margin-left: 25px
+    margin-left: 25px;
 }
 
 #menu ul li{
     line-height: 55px;
-    float: left;
+    float:left;
     border-right: 1px solid #363636;
 }
 
@@ -117,12 +122,11 @@ td{
 }
 
 #menu a:first-child{
-    border-left: 1px solid #363636;
+   border-left: 1px solid #363636; 
 }
 
 #menu a:hover{
     background: #01B1EA;
-    
 }
 
 /*CONTENT*/
@@ -137,7 +141,7 @@ td{
     width: 22%;
     min-height: 500px;
     float: left;
-    margin-top: 20px;
+    margin-top:20px;
     margin-left: 10px;
 }
 
@@ -160,7 +164,6 @@ td{
     font-weight: bold;
     background: #E1E1E1;
     border-bottom: 2px solid #01B1EA;
-        
 }
 
 #lateral ul{
@@ -169,14 +172,13 @@ td{
 }
 
 #lateral ul li{
-    list-style:square;
+    list-style: square;
     margin-left: 20px;
     margin-top: 5px;
     margin-bottom: 5px;
 }
 
 /*FORMS*/
-
 .form_container{
     width: 50%;
 }
@@ -186,7 +188,7 @@ input[type="text"],
 input[type="password"],
 input[type="email"],
 input[type="number"],
-select,textarea{
+select, textarea{
     display:block;
     width: 95%;
     margin-top: 2px;
@@ -197,7 +199,8 @@ input[type="text"],
 input[type="password"],
 input[type="email"],
 input[type="number"],
-select,textarea{    border: 1px solid #C9C9C9;
+select, textarea{
+    border: 1px solid #C9C9C9;
     box-shadow: 0px 0px 2px #ccc inset;
     background: white;
     padding: 2px;
@@ -215,7 +218,7 @@ input[type="email"]:focus{
 input[type="button"],
 input[type="submit"],
 button, .button{
-    display:block;
+    display: block;
     border-radius: 2px;
     width: auto;
     padding: 5px;
@@ -224,7 +227,7 @@ button, .button{
     color: white;
     background: #2979CD;
     border: 1px solid #11608E;
-    cursor: pointer;
+    cursor:pointer;
 }
 
 .button{
@@ -246,10 +249,10 @@ button, .button{
 
 .button-red{
     background: red;
-    border: 1px solid #cf1717;
+     border: 1px solid #cf1717;
 }
 
-label,
+label, 
 input[type="button"],
 input[type="submit"],
 button{
@@ -257,15 +260,14 @@ button{
     margin-top: 10px;
 }
 
-
 /*CENTRAL*/
 #central{
     width: 72%;
     min-height: 500px;
     float: right;
     border-left: 1px solid #ccc;
-    box-shadow: -5px 1px 5px #ddd;
-    padding: 25px;
+    box-shadow: -5px -1px 5px #ddd;
+    padding:25px;
 }
 
 #central h1{
@@ -276,8 +278,7 @@ button{
     border-bottom: 1px solid #ccc;
     margin-bottom: 20px;
     padding: 20px;
-    padding-top: 0px;    
-    
+    padding-top: 0px;
 }
 
 /*PRODUCTOS*/
@@ -291,16 +292,16 @@ button{
 }
 
 .product a{
-    color: black;
+    color:black;
     text-decoration: none;
 }
 
 .product a:hover{
-    color: #555;
+    color:#555;
 }
 
 .product img{
-    height: 170px;
+    height:170px;
     margin-bottom: 10px;
 }
 
@@ -308,10 +309,6 @@ button{
     height: 80px;
     display: block;
     margin:10px auto;
-}
-
-.thumb{
-    width: 100px;
 }
 
 .product h2{
@@ -325,28 +322,25 @@ button{
     margin-bottom: 10px;
 }
 
+#detail-product{
+    width: 100%;
+}
 
-/*
-*.detail (con punto cuando es una clase
-*#detail (cuando es un div
-*.image es una clase
-*/
 #detail-product .image{
     display: block;
     width: 47%;
-    float: left;
+    float:left;
 }
 
-/* img es una etiqueta */
 #detail-product img{
     display: block;
     width: 100%;
-    float: left;
+    float:left;
 }
 
 #detail-product .data{
     width: 50%;
-    float: right;
+    float:right;
 }
 
 #detail-product .description{
@@ -364,32 +358,62 @@ button{
     text-align: center;
 }
 
-/*FOOTER*/
 
+/*FOOTER*/
 #footer{
-    clear:both;
+    clear: both;
     text-align: center;
-    padding-top: 10px;
+    padding-top:10px;
     padding-bottom: 10px;
     color: white;
     background: #222222;
-    border-top: 5px solid #01B1EA;
+    border-top: 4px solid #01B1EA;
 }
 
 /*CARRITO*/
+.delete-carrito{
+   width: 295px;
+   float: left; 
+}
+
+.button-delete{
+    display: block;
+    float: left;
+    width: 100px;
+}
+
+.button-carrito{
+    width: 70px;
+    margin: 0px auto;
+    text-align: center;
+}
+
 .total-carrito{
-    width: 295px;
-    float:right;
+   width: 295px;
+   float: right; 
 }
 
 .total-carrito h3{
     display: block;
-    float: left;
+    float:left;
     margin-top: 5px;
 }
 
 .button-pedido{
     display: block;
-    float:right;
+    float: right;
     width: 100px;
+}
+
+.updown-unidades{
+    width: 80px;
+    margin: 0px auto;
+}
+
+.updown-unidades .button{
+    display: block;
+    width: 20px;
+    float: left;
+    padding:2px;
+    margin: 7px;
 }
