@@ -1,6 +1,6 @@
 <?php
 
-define("base_url","http://localhost/master-php/proyecto-php-poo/");
+define("base_url","http://localhost/master-php/proyecto-pijama-mayo/");
 define("controller_default","productoController");
 define("action_default","index");
 

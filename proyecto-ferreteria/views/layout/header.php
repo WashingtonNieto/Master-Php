@@ -2,7 +2,7 @@
 <html lang="es">
     <head>
         <meta charset="UTF-8" />
-        <title> Tienda de Camisetas</title>
+        <title> Ferreteria</title>
         <link rel="stylesheet" href="<?=base_url?>assets/css/styles.css" />
     </head>
     <body>
