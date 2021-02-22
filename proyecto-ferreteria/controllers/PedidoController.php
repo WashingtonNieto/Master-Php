@@ -60,6 +60,7 @@ class pedidoController {
             $pedido_productos = new Pedido();
             $productos = $pedido_productos->getProductosByPedido($pedido->id);
         }
+
         require_once 'views/pedido/confirmado.php';
     }
 
