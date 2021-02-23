@@ -129,7 +129,7 @@ class Producto{
         return $result;
     }
     
-        public function edit(){
+    public function edit(){
        
         $sql = "UPDATE productos SET categoria_id='{$this->getCategoria_id()}',nombre='{$this->getNombre()}',descripcion='{$this->getDescripcion()}',precio='{$this->getPrecio()}' ";
         $sql .= ", stock='{$this->getStock()}'";
