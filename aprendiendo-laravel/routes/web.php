@@ -18,13 +18,15 @@ Route::get('/', function () {
     /* echo "<h1>Hola mundo</h1>"; */
 });
 
+Route::get('/peliculas/{pagina?}','PeliculasController@index');
+
 /*
  * GET: Conseguir datos
  * POST: Guardar datos
  * PUT: Actualizar recursos
  * DELETE: Eliminar recursos
  */
-
+/*
 Route::get('/mostrar-fecha', function(){
     $titulo = "Estoy mostrando la fecha";
     return view('mostrar-fecha',array(
@@ -50,3 +52,9 @@ Route::get('/listado-peliculas', function(){
         ->with('titulo', $titulo)
         ->with('listado', $listado);
 });
+
+Route::get('/pagina-generica', function(){
+    return view('pagina');
+});
+
+*/

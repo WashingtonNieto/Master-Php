@@ -4,12 +4,14 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
-class PeliculaController extends Controller
+class PeliculasController extends Controller
 {
-    public function index(){
+    public function index($pagina = 1){
         $titulo = 'Listado de mis peliculas';
+        
         return view('pelicula.index',[
-            'titulo' => $titulo
+            'titulo' => $titulo,
+            'pagina' => $pagina
         ]);
     }
 }

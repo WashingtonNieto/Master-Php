@@ -9,7 +9,7 @@
             <h1>CABECERA DE LA WEB (master)</h1>
         @show
         <hr>
-        <div class=''container>
+        <div class='container'>
             @yield('content')
         </div>
         <hr>
